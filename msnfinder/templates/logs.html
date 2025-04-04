@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer</title>
+    <style>
+        body {
+            font-family: monospace; /* Use monospace font for CLI style */
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .log-container {
+            background: #000; /* Black background for CLI style */
+            color: #00ff00; /* Green text for CLI style */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: 400px; /* Limit height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Hide horizontal scroll */
+            margin: 0; /* Remove default margin */
+            white-space: pre-wrap; /* Allows wrapping of long lines */
+            word-wrap: break-word; /* Break long words */
+        }
+    </style>
+</head>
+<body>
+    <h1>Log Viewer</h1>
+    <div class="log-container" id="logContent">
+        {% for log in logs %}
+            {{ log }}<br> <!-- Add <br> for line breaks -->
+        {% endfor %}
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
